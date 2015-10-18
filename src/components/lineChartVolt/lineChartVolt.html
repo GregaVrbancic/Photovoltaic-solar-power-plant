@@ -1,0 +1,11 @@
+<div class="col-md-12 block" style="text-align:center;">
+	<h5>Current AC (V):</h5>
+    <base-chart class="chart"
+                [data]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [chart-type]="lineChartType"
+                (chart-hover)="chartHovered($event)"
+                (chart-click)="chartClicked($event)">
+    </base-chart>
+</div>

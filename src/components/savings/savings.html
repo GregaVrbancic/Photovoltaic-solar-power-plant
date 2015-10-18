@@ -1,0 +1,21 @@
+<div class="col-md-12 block">
+	<h5 style="text-align:center;"><strong>Estimated saving till now:</strong></h5>
+
+	<table class="table" style="text-align:center;">
+		<thead>
+			<tr>
+				<td><strong>Produced power</strong></td>
+				<td><strong>Average cost of kWh</strong></td>
+				<td><strong>Estimated savings</strong></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{watts}} kWh</td>
+				<td>{{price}}c &euro;</td>
+				<td>{{price * watts / 100 | number:'1.2-2'}} &euro;</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

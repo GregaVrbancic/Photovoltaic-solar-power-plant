@@ -3,12 +3,15 @@ import {HTTP_BINDINGS} from 'angular2/http';
 
 import {Nav} from './components/nav/nav';
 import {Weather} from './components/weather/weather';
+import {LineChartWatt} from './components/lineChartWatt/lineChartWatt';
+import {LineChartVolt} from './components/lineChartVolt/lineChartVolt';
 import {Estimate} from './components/estimate/estimate';
+import {Savings} from './components/savings/savings';
 
 @Component({
 	selector: 'app',
 	templateUrl: 'src/app.html',
-	directives: [Nav, Weather, Estimate]
+	directives: [Nav, Weather, LineChartWatt, LineChartVolt, Estimate, Savings]
 })
 
 export class AppComponent {}

@@ -4,13 +4,21 @@
 <div class="container-fluid">
 	<div class="row" style="padding-top:50px;">
 		<!-- Leftside -->
-		<div class="col-md-4">
-			<div class="row"><weather></weather></div>
+		<div class="col-md-6">
+			<line-chart-watt></line-chart-watt>
 		</div>
-		<!-- Middle -->
-		<div class="col-md-4">.col-md-4</div>
-		<!-- Rightside -->
-		<div class="col-md-4"><estimate></estimate></div>
+		<div class="col-md-6">
+			<line-chart-volt></line-chart-volt>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<estimate></estimate>
+		</div>
+		<div class="col-md-6">
+			<weather></weather>
+			<savings></savings>
+		</div>
 	</div>
 </div>
 

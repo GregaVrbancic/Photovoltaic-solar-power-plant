@@ -10,18 +10,11 @@ import {EstimateService} from '../../services/estimateService';
 })
 
 export class Estimate {
-	price: string;
+	
 	estimation: Object;
 	months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Avg', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 	constructor(public estimateService: EstimateService) {
-		estimateService
-			.getPriceRate()
-			.subscribe(
-				data => this.price = data.results[0].rate,
-				err => this.logError(err),
-				() => console.log('getPriceRate() Complete')
-			);
 
 		estimateService
 			.getEstimation()
