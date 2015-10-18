@@ -7,11 +7,12 @@ import {LineChartWatt} from './components/lineChartWatt/lineChartWatt';
 import {LineChartVolt} from './components/lineChartVolt/lineChartVolt';
 import {Estimate} from './components/estimate/estimate';
 import {Savings} from './components/savings/savings';
+import {SystemInfo} from './components/systemInfo/systemInfo';
 
 @Component({
 	selector: 'app',
 	templateUrl: 'src/app.html',
-	directives: [Nav, Weather, LineChartWatt, LineChartVolt, Estimate, Savings]
+	directives: [Nav, Weather, LineChartWatt, LineChartVolt, Estimate, Savings, SystemInfo]
 })
 
 export class AppComponent {}

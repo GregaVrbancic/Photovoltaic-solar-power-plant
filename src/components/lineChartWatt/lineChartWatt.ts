@@ -1,7 +1,7 @@
 import {Component, View, EventEmitter, CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from 'angular2/angular2';
 
 import {charts} from '../../components/charts/index';
-import {FeedService} from '../../services/feedService'
+import {FeedService} from '../../services/feedService';
 
 @Component({
 	selector: 'line-chart-watt',
