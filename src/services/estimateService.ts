@@ -13,12 +13,12 @@ export class EstimateService {
 		this.PRICE_RATE_API = _properties.priceRateAPI;
 	}
 
-	getPriceRate() {
+	getPriceRate(): any {
 		return this.http.get(this.PRICE_RATE_API)
 			.map(res => res.json());
 	}
 
-	getEstimation() :any {
+	getEstimation(): any {
 		return this.http.get(this.ESTIMATE_API)
 			.map(res => res.json());
 	}

@@ -1,0 +1,25 @@
+<div class="col-md-10 col-md-offset-1 right-block">
+	<h5 style="text-align:center;"><strong>Current weather:</strong></h5>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<td><h3>{{weather.main.temp}} ºC</h3></td>
+				<td><img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png"></td>
+			</tr>
+			<tr>
+				<td><strong>cloudines: </strong></td>
+				<td>{{weather.clouds.all}} %</td>
+			</tr>
+			<tr>
+				<td><strong>pressure: </strong></td>
+				<td>{{weather.main.pressure}} mBar</td>
+			</tr>
+			<tr>
+				<td><strong>humidity: </strong></td>
+				<td>{{weather.main.humidity}} %</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
