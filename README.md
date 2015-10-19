@@ -1,4 +1,6 @@
+## Demo
 
+[Here](http://gregavrbancic.github.io/Photovoltaic-solar-power-plant) you can find a working demo.
 
 ## Install
 
@@ -13,7 +15,7 @@ After completing installation type in your favourite shell:
 
 * `gulp play` to start an app in a new browser window. App files are observed and will be re-transpiled on each change.
 
-# Credits
+## Credits
 
 This project in based on ng2-play Angular2 seed project. A minimal [Angular2](https://angular.io/) playground using [TypeScript](http://www.typescriptlang.org/) and [SystemJS loader](https://github.com/systemjs/systemjs)
 
