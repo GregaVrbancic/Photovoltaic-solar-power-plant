@@ -5,13 +5,13 @@
 		<table class="table table-hover" style="text-align:center;">
 			<thead>
 				<tr>
-					<td><strong>AC</strong></td>
-					<td><strong>SOLRAD</strong></td>
+					<td><strong>AC</strong><br /> alternating current</td>
+					<td><strong>SOLRAD</strong><br /> solar radiance</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>{{estimation.outputs.ac_annual | number:'1.2-2'}} kWh/m2</td>
+					<td>{{estimation.outputs.ac_annual | number:'1.2-2'}} kWhac</td>
 					<td>{{estimation.outputs.solrad_annual | number:'1.2-2'}} kWh/m2/day</td>
 				</tr>
 			</tbody>
@@ -23,10 +23,10 @@
 			<thead>
 				<tr>
 					<td><strong>Month</strong></td>
-					<td><strong>AC <i class="fa fa-question-circle"></i></strong> (kWh/m2)</td>
-					<td><strong>POA <i class="fa fa-question-circle"></i></strong> (kWhac)</td>
-					<td><strong>SOLRAD <i class="fa fa-question-circle"></i></strong> (kWh/m2/day) </td>
-					<td><strong>DC <i class="fa fa-question-circle"></i></strong> (kWhdc) </td>
+					<td><strong>AC (kWhac)</strong><br /> alternating current</td>
+					<td><strong>POA (kWh/m2)</strong><br /> plane of array irradiance values</td>
+					<td><strong>SOLRAD (kWh/m2/day)</strong><br /> sola radiance</td>
+					<td><strong>DC (kWhdc)</strong><br /> direct current</td>
 				</tr>
 			</thead>
 			<tbody>
