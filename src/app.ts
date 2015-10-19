@@ -1,20 +1,31 @@
 import {Component, bootstrap} from 'angular2/angular2';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 import {HTTP_BINDINGS} from 'angular2/http';
 
-import {Nav} from './components/nav/nav';
-import {Weather} from './components/weather/weather';
-import {LineChartWatt} from './components/lineChartWatt/lineChartWatt';
-import {LineChartVolt} from './components/lineChartVolt/lineChartVolt';
-import {Estimate} from './components/estimate/estimate';
-import {Savings} from './components/savings/savings';
-import {SystemInfo} from './components/systemInfo/systemInfo';
+import {Home} from './components/home/home';
+import {About} from './components/about/about';
+
+import {_properties} from './properties';
+
 
 @Component({
 	selector: 'app',
 	templateUrl: 'src/app.html',
-	directives: [Nav, Weather, LineChartWatt, LineChartVolt, Estimate, Savings, SystemInfo]
+	directives: [ROUTER_DIRECTIVES]
 })
 
-export class AppComponent {}
+@RouteConfig([
+	{ path: '/', as: 'Home', component: Home },
+	{ path: '/about', as: 'About', component: About }
+])
 
-bootstrap(AppComponent, HTTP_BINDINGS);
+export class AppComponent {
+	title: string;
+
+	constructor() {
+		this.title = _properties.projectName;
+	}
+
+}
+
+bootstrap(AppComponent, [HTTP_BINDINGS, ROUTER_BINDINGS]);

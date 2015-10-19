@@ -16,3 +16,5 @@ After completing installation type in your favourite shell:
 # Credits
 
 This project in based on ng2-play Angular2 seed project. A minimal [Angular2](https://angular.io/) playground using [TypeScript](http://www.typescriptlang.org/) and [SystemJS loader](https://github.com/systemjs/systemjs)
+
+For drawing charts is used component [ng2-charts](https://github.com/valor-software/ng2-charts) based on [Chart.js](http://www.chartjs.org).
