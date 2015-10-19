@@ -4,7 +4,7 @@ import {EstimateService} from '../../services/estimateService';
 
 @Component({
 	selector: 'estimate',
-	templateUrl: 'src/components/estimate/estimate.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/components/estimate/estimate.html',
 	bindings: [EstimateService],
 	directives: [NgFor]
 })

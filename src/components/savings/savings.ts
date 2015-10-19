@@ -5,7 +5,7 @@ import {FeedService} from '../../services/feedService';
 
 @Component({
 	selector: 'savings',
-	templateUrl: 'src/components/savings/savings.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/components/savings/savings.html',
 	bindings: [EstimateService, FeedService]
 })
 

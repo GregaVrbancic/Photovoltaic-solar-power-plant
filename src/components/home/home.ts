@@ -9,7 +9,7 @@ import {SystemInfo} from '../../components/systemInfo/systemInfo';
 
 @Component({
 	selector: 'home',
-	templateUrl: 'src/components/home/home.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/components/home/home.html',
 	directives: [CORE_DIRECTIVES, Weather, LineChartWatt, LineChartVolt, Estimate, Savings, SystemInfo]
 })
 

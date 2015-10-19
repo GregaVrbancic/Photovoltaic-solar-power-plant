@@ -4,7 +4,7 @@ import {WeatherService} from '../../services/weatherService';
 
 @Component({
 	selector: 'weather',
-	templateUrl: 'src/components/weather/weather.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/components/weather/weather.html',
 	bindings: [WeatherService]
 })
 
