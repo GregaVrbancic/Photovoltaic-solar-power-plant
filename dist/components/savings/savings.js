@@ -35,6 +35,14 @@ System.register(['angular2/angular2', '../../services/estimateService', '../../s
                     feedService
                         .getTotalWattFeed()
                         .subscribe(function (data) { return _this.getComulativeWatts(data); }, function (err) { return _this.logError(err); }, function () { return console.log('getTotalWattFeed() Complete'); });
+                    setInterval(function () {
+                        estimateService
+                            .getPriceRate()
+                            .subscribe(function (data) { return _this.parseToNumber(data); }, function (err) { return _this.logError(err); }, function () { return console.log('getPriceRate() Complete'); });
+                        feedService
+                            .getTotalWattFeed()
+                            .subscribe(function (data) { return _this.getComulativeWatts(data); }, function (err) { return _this.logError(err); }, function () { return console.log('getTotalWattFeed() Complete'); });
+                    }, 30000);
                 }
                 Savings.prototype.parseToNumber = function (data) {
                     var priceStr = data.results[0].rate;
@@ -49,7 +57,7 @@ System.register(['angular2/angular2', '../../services/estimateService', '../../s
                 Savings = __decorate([
                     angular2_1.Component({
                         selector: 'savings',
-                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/savings/savings.html',
+                        templateUrl: 'src/components/savings/savings.html',
                         bindings: [estimateService_1.EstimateService, feedService_1.FeedService]
                     }), 
                     __metadata('design:paramtypes', [estimateService_1.EstimateService, feedService_1.FeedService])

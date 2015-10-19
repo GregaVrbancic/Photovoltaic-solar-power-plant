@@ -5,7 +5,7 @@ import {FeedService} from '../../services/feedService';
 
 @Component({
 	selector: 'savings',
-	templateUrl: 'Photovoltaic-solar-power-plant/src/components/savings/savings.html',
+	templateUrl: 'src/components/savings/savings.html',
 	bindings: [EstimateService, FeedService]
 })
 
@@ -17,23 +17,41 @@ export class Savings {
 		estimateService
 			.getPriceRate()
 			.subscribe(
-				data => this.parseToNumber(data),
-				err => this.logError(err),
-				() => console.log('getPriceRate() Complete')
+			data => this.parseToNumber(data),
+			err => this.logError(err),
+			() => console.log('getPriceRate() Complete')
 			);
 
 		feedService
 			.getTotalWattFeed()
 			.subscribe(
+			data => this.getComulativeWatts(data),
+			err => this.logError(err),
+			() => console.log('getTotalWattFeed() Complete')
+			);
+
+		setInterval(() => {
+			estimateService
+				.getPriceRate()
+				.subscribe(
+				data => this.parseToNumber(data),
+				err => this.logError(err),
+				() => console.log('getPriceRate() Complete')
+				);
+
+			feedService
+				.getTotalWattFeed()
+				.subscribe(
 				data => this.getComulativeWatts(data),
 				err => this.logError(err),
 				() => console.log('getTotalWattFeed() Complete')
-			);
+				);
+        }, 30000);
 	}
 
 	parseToNumber(data) {
 		var priceStr = data.results[0].rate;
-		this.price = priceStr.substring(0,5);
+		this.price = priceStr.substring(0, 5);
 	}
 
 	getComulativeWatts(data) {

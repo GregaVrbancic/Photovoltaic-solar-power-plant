@@ -29,8 +29,6 @@ System.register(['angular2/angular2', '../../services/estimateService'], functio
                     estimateService
                         .getEstimation()
                         .subscribe(function (data) { return _this.estimation = data; }, function (err) { return _this.logError(err); }, function () { return console.log('getEstimation() Complete'); });
-                    setInterval(function () {
-                    }, 2000);
                 }
                 Estimate.prototype.logError = function (err) {
                     console.error('There was an error: ' + err);

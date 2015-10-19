@@ -28,6 +28,11 @@ System.register(['angular2/angular2', '../../services/weatherService'], function
                     weatherService
                         .getCurrentWeather()
                         .subscribe(function (data) { return _this.weather = data; }, function (err) { return _this.logError(err); }, function () { return console.log('getCurrentWeather() Complete'); });
+                    setInterval(function () {
+                        weatherService
+                            .getCurrentWeather()
+                            .subscribe(function (data) { return _this.weather = data; }, function (err) { return _this.logError(err); }, function () { return console.log('getCurrentWeather() Complete'); });
+                    }, 30000);
                 }
                 Weather.prototype.logError = function (err) {
                     console.error('There was an error: ' + err);
@@ -35,7 +40,7 @@ System.register(['angular2/angular2', '../../services/weatherService'], function
                 Weather = __decorate([
                     angular2_1.Component({
                         selector: 'weather',
-                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/weather/weather.html',
+                        templateUrl: 'src/components/weather/weather.html',
                         bindings: [weatherService_1.WeatherService]
                     }), 
                     __metadata('design:paramtypes', [weatherService_1.WeatherService])

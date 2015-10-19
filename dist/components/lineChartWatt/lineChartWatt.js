@@ -34,9 +34,15 @@ System.register(['angular2/angular2', '../../components/charts/index', '../../se
                     this.lineChartOptions = {
                         pointHitDetectionRadius: 1
                     };
+                    this.lastData = 0;
                     feedService
                         .getTotalWattFeed()
                         .subscribe(function (data) { return _this.digestData(data); }, function (err) { return _this.logError(err); }, function () { return console.log('getTotalWattFeed() Complete'); });
+                    setInterval(function () {
+                        feedService
+                            .getTotalWattFeed()
+                            .subscribe(function (data) { return _this.digestData(data); }, function (err) { return _this.logError(err); }, function () { return console.log('getTotalWattFeed() Complete'); });
+                    }, 30000);
                 }
                 LineChartWatt.prototype.chartClicked = function (e) {
                     console.log(e);
@@ -45,17 +51,21 @@ System.register(['angular2/angular2', '../../components/charts/index', '../../se
                     console.log(e);
                 };
                 LineChartWatt.prototype.digestData = function (data) {
-                    console.log('received data:' + data.feeds);
-                    //clear labels and data
-                    //this.lineChartLabels = [];
-                    this.lineChartData = [[]];
-                    for (var i = data.feeds.length - 50; i < data.feeds.length; i++) {
-                        //set labels
-                        var date = new Date(data.feeds[i].created_at);
-                        this.lineChartLabels.push(date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes());
-                        console.log('created at: ' + new Date(data.feeds[i].created_at));
-                        //set chart data
-                        this.lineChartData[0].push(data.feeds[i].field2);
+                    if (this.lastData != data.feeds[data.feeds.length - 1].entry_id) {
+                        //clear labels and data
+                        if (this.lineChartLabels.length > 0) {
+                            this.lineChartLabels = [];
+                        }
+                        this.lineChartData = [[]];
+                        for (var i = data.feeds.length - 50; i < data.feeds.length; i++) {
+                            //set labels
+                            var date = new Date(data.feeds[i].created_at);
+                            this.lineChartLabels.push(date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes());
+                            console.log('created at: ' + new Date(data.feeds[i].created_at));
+                            //set chart data
+                            this.lineChartData[0].push(data.feeds[i].field2);
+                        }
+                        this.lastData = data.feeds[data.feeds.length - 1].entry_id;
                     }
                 };
                 LineChartWatt.prototype.logError = function (err) {
@@ -64,7 +74,7 @@ System.register(['angular2/angular2', '../../components/charts/index', '../../se
                 LineChartWatt = __decorate([
                     angular2_1.Component({
                         selector: 'line-chart-watt',
-                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/lineChartWatt/lineChartWatt.html',
+                        templateUrl: 'src/components/lineChartWatt/lineChartWatt.html',
                         directives: [index_1.charts, angular2_1.NgClass, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES],
                         bindings: [feedService_1.FeedService]
                     }), 
