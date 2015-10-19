@@ -40,7 +40,7 @@ System.register(['angular2/angular2', 'angular2/router', 'angular2/http', './com
                 AppComponent = __decorate([
                     angular2_1.Component({
                         selector: 'app',
-                        templateUrl: 'src/app.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/app.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }),
                     router_1.RouteConfig([
