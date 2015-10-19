@@ -10,7 +10,7 @@ import {_properties} from './properties';
 
 @Component({
 	selector: 'app',
-	templateUrl: 'src/app.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/app.html',
 	directives: [ROUTER_DIRECTIVES]
 })
 
