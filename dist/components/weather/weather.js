@@ -40,7 +40,7 @@ System.register(['angular2/angular2', '../../services/weatherService'], function
                 Weather = __decorate([
                     angular2_1.Component({
                         selector: 'weather',
-                        templateUrl: 'src/components/weather/weather.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/weather/weather.html',
                         bindings: [weatherService_1.WeatherService]
                     }), 
                     __metadata('design:paramtypes', [weatherService_1.WeatherService])

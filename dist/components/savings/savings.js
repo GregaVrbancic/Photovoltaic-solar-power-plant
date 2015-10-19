@@ -57,7 +57,7 @@ System.register(['angular2/angular2', '../../services/estimateService', '../../s
                 Savings = __decorate([
                     angular2_1.Component({
                         selector: 'savings',
-                        templateUrl: 'src/components/savings/savings.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/savings/savings.html',
                         bindings: [estimateService_1.EstimateService, feedService_1.FeedService]
                     }), 
                     __metadata('design:paramtypes', [estimateService_1.EstimateService, feedService_1.FeedService])

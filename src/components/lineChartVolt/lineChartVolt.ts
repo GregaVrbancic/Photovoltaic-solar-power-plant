@@ -5,7 +5,7 @@ import {FeedService} from '../../services/feedService'
 
 @Component({
 	selector: 'line-chart-volt',
-	templateUrl: 'src/components/lineChartVolt/lineChartVolt.html',
+	templateUrl: 'Photovoltaic-solar-power-plant/src/components/lineChartVolt/lineChartVolt.html',
 	directives: [charts, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES],
 	bindings: [FeedService]
 })

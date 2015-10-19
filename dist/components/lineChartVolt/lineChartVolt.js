@@ -74,7 +74,7 @@ System.register(['angular2/angular2', '../../components/charts/index', '../../se
                 LineChartVolt = __decorate([
                     angular2_1.Component({
                         selector: 'line-chart-volt',
-                        templateUrl: 'src/components/lineChartVolt/lineChartVolt.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/lineChartVolt/lineChartVolt.html',
                         directives: [index_1.charts, angular2_1.NgClass, angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES],
                         bindings: [feedService_1.FeedService]
                     }), 
