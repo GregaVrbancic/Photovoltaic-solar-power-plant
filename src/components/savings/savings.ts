@@ -29,6 +29,24 @@ export class Savings {
 				err => this.logError(err),
 				() => console.log('getTotalWattFeed() Complete')
 			);
+
+		setInterval(() => {
+			estimateService
+				.getPriceRate()
+				.subscribe(
+					data => this.parseToNumber(data),
+					err => this.logError(err),
+					() => console.log('getPriceRate() Complete')
+				);
+
+			feedService
+				.getTotalWattFeed()
+				.subscribe(
+					data => this.getComulativeWatts(data),
+					err => this.logError(err),
+					() => console.log('getTotalWattFeed() Complete')
+				);
+        }, 30000);
 	}
 
 	parseToNumber(data) {

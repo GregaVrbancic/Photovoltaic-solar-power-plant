@@ -17,6 +17,9 @@ export class LineChartWatt {
 	private lineChartOptions: any = {
 		pointHitDetectionRadius: 1
 	};
+
+	private lastData: number = 0;
+
 	constructor(public feedService: FeedService) {
 		feedService
 			.getTotalWattFeed()
@@ -26,7 +29,15 @@ export class LineChartWatt {
 				() => console.log('getTotalWattFeed() Complete')
 			);
 		
-		
+		setInterval(() => {
+			feedService
+				.getTotalWattFeed()
+				.subscribe(
+					data => this.digestData(data),
+					err => this.logError(err),
+					() => console.log('getTotalWattFeed() Complete')
+				);
+        }, 30000);
 	}
 
 	chartClicked(e: any) {
@@ -38,17 +49,22 @@ export class LineChartWatt {
 	}
 
 	digestData(data) {
-		console.log('received data:' + data.feeds);
-		//clear labels and data
-		//this.lineChartLabels = [];
-		this.lineChartData = [[]];
-		for (var i = data.feeds.length-50; i < data.feeds.length; i++) {
-			//set labels
-			var date = new Date(data.feeds[i].created_at)
-			this.lineChartLabels.push(date.getDate() + '/' + (date.getMonth()+1) + ' ' + date.getHours() + ':' + date.getMinutes());
-			console.log('created at: ' + new Date(data.feeds[i].created_at));
-			//set chart data
-			this.lineChartData[0].push(data.feeds[i].field2);
+		if (this.lastData != data.feeds[data.feeds.length - 1].entry_id) {
+			//clear labels and data
+			if (this.lineChartLabels.length > 0) {
+				this.lineChartLabels = [];
+			}
+			this.lineChartData = [[]];
+			for (var i = data.feeds.length - 50; i < data.feeds.length; i++) {
+				//set labels
+				var date = new Date(data.feeds[i].created_at)
+				this.lineChartLabels.push(date.getDate() + '/' + (date.getMonth() + 1) + ' ' + date.getHours() + ':' + date.getMinutes());
+				console.log('created at: ' + new Date(data.feeds[i].created_at));
+				//set chart data
+				this.lineChartData[0].push(data.feeds[i].field2);
+			}
+
+			this.lastData = data.feeds[data.feeds.length - 1].entry_id;
 		}
 	}
 

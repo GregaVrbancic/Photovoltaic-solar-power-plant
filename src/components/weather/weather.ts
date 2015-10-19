@@ -12,6 +12,7 @@ export class Weather {
 	weather: Object;
 
 	constructor(public weatherService: WeatherService) {
+
 		weatherService
 			.getCurrentWeather()
 			.subscribe(
@@ -19,6 +20,16 @@ export class Weather {
 				err => this.logError(err),
 				() => console.log('getCurrentWeather() Complete')
 			);
+
+		setInterval(() => {
+			weatherService
+				.getCurrentWeather()
+				.subscribe(
+					data => this.weather = data,
+					err => this.logError(err),
+					() => console.log('getCurrentWeather() Complete')
+				);
+        }, 30000);
 	}
 
 	logError(err) {

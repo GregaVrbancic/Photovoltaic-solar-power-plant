@@ -23,10 +23,6 @@ export class Estimate {
 				err => this.logError(err),
 				() => console.log('getEstimation() Complete')
 			);
-
-		setInterval(() => {
-
-        }, 2000);
 	}
 
 	logError(err) {
