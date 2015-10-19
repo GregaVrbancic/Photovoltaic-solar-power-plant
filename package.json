@@ -26,6 +26,7 @@
     "es6-shim": "^0.33.6",
     "font-awesome": "4.4.0",
     "install": "0.1.8",
+    "ng2-bootstrap": "^0.44.2",
     "ng2-charts": "0.0.0",
     "systemjs": "0.18.4",
     "tsd": "0.6.5"
