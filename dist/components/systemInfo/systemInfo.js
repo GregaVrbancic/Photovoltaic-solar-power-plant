@@ -35,7 +35,7 @@ System.register(['angular2/angular2', '../../services/feedService'], function(ex
                 SystemInfo = __decorate([
                     angular2_1.Component({
                         selector: 'system-info',
-                        templateUrl: 'src/components/systemInfo/systemInfo.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/systemInfo/systemInfo.html',
                         bindings: [feedService_1.FeedService]
                     }), 
                     __metadata('design:paramtypes', [feedService_1.FeedService])

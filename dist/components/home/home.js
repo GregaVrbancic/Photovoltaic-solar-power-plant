@@ -42,7 +42,7 @@ System.register(['angular2/angular2', '../../components/weather/weather', '../..
                 Home = __decorate([
                     angular2_1.Component({
                         selector: 'home',
-                        templateUrl: 'src/components/home/home.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/home/home.html',
                         directives: [angular2_1.CORE_DIRECTIVES, weather_1.Weather, lineChartWatt_1.LineChartWatt, lineChartVolt_1.LineChartVolt, estimate_1.Estimate, savings_1.Savings, systemInfo_1.SystemInfo]
                     }), 
                     __metadata('design:paramtypes', [])

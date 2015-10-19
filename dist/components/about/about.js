@@ -24,7 +24,7 @@ System.register(['angular2/angular2'], function(exports_1) {
                 About = __decorate([
                     angular2_1.Component({
                         selector: 'about',
-                        templateUrl: 'src/components/about/about.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/about/about.html',
                         directives: [angular2_1.CORE_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

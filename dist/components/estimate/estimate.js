@@ -38,7 +38,7 @@ System.register(['angular2/angular2', '../../services/estimateService'], functio
                 Estimate = __decorate([
                     angular2_1.Component({
                         selector: 'estimate',
-                        templateUrl: 'src/components/estimate/estimate.html',
+                        templateUrl: 'Photovoltaic-solar-power-plant/src/components/estimate/estimate.html',
                         bindings: [estimateService_1.EstimateService],
                         directives: [angular2_1.NgFor]
                     }), 
